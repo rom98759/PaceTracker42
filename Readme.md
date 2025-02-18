@@ -1,22 +1,33 @@
 # 42 Milestone Calculator
 
+## Inspiration
+
+This project was inspired by the amazing work done in the [deadlines42Public](https://github.com/LLuisPP/deadlines42Public.git) repository. A big shoutout to the contributors of that project!
+
 ## Overview
 
 The **42 Milestone Calculator** is a web-based tool designed to help students at the 42 coding school estimate their progress through the curriculum based on their pace. This tool provides an easy way to calculate the deadlines for various milestones, ensuring that students stay on track and avoid the "blackhole" date—the critical deadline before which projects must be completed to avoid expulsion.
 
 <div style="text-align: center;">
-   <img src="img/milestone.png" alt="42 Milestone Calculator" style="max-width: 50%; height: auto;">
+   <img src="img/milestone.png" alt="42 Milestone Calculator" style="max-width: 50%; height: auto; border: 2px solid #4CAF50; border-radius: 10px;">
 </div>
+
+
+> [!WARNING]
+> This software is NOT official from 42 Network, use it at your own risk.<br>
+> For informational purposes only.
 
 ## How It Works
 
 1. **Input Your Details:**
+
    - **Start Date:** Enter the date you started your curriculum.
    - **Pace:** Select your pace from the dropdown menu.
    - **Milestone:** Choose the milestone you want to calculate the deadline for.
    - **Bonus Days:** Enter any bonus days you have.
 
 2. **Calculate:**
+
    - Click the "Calculate" button to see the estimated deadline for the selected milestone.
 
 3. **Results:**
@@ -31,11 +42,13 @@ The **42 Milestone Calculator** is a web-based tool designed to help students at
 ## Installation
 
 1. **Clone the Repository:**
+
    ```bash
    git clone https://github.com/rom98759/PaceTracker42.git
    ```
 
 2. **Open the Project:**
+
    - Open the `index.html` file in your preferred web browser.
 
 3. **Usage:**
@@ -63,21 +76,21 @@ Account for any additional days you might have earned, which can be crucial in a
 
 ### Day Distribution
 
-| Milestone | 8 mths | 12 mths | 15 mths | 18 mths | 22 mths | 24 mths |
-|-----------|--------|---------|---------|---------|---------|---------|
-| 0         | 8      | 13      | 18      | 24      | 30      | 45      |
-| 1         | 24     | 35      | 42      | 48      | 58      | 73      |
-| 2         | 22     | 33      | 41      | 49      | 60      | 60      |
-| 3         | 36     | 53      | 67      | 80      | 98      | 128     |
-| 4         | 51     | 77      | 96      | 115     | 141     | 141     |
-| 5         | 71     | 107     | 134     | 162     | 197     | 197     |
-| 6         | 32     | 47      | 59      | 70      | 86      | 86      |
-| **Total** | (244 d)| (366 d) | (458 d) | (549 d) | (671 d) | (732 d) |
+| Milestone | 8 mths  | 12 mths | 15 mths | 18 mths | 22 mths | 24 mths |
+| --------- | ------- | ------- | ------- | ------- | ------- | ------- |
+| 0         | 8       | 13      | 18      | 24      | 30      | 45      |
+| 1         | 24      | 35      | 42      | 48      | 58      | 73      |
+| 2         | 22      | 33      | 41      | 49      | 60      | 60      |
+| 3         | 36      | 53      | 67      | 80      | 98      | 128     |
+| 4         | 51      | 77      | 96      | 115     | 141     | 141     |
+| 5         | 71      | 107     | 134     | 162     | 197     | 197     |
+| 6         | 32      | 47      | 59      | 70      | 86      | 86      |
+| **Total** | (244 d) | (366 d) | (458 d) | (549 d) | (671 d) | (732 d) |
 
 ### Accumulative Days to Each Milestone
 
 | Milestone | 8 mths | 12 mths | 15 mths | 18 mths | 22 mths | 24 mths |
-|-----------|--------|---------|---------|---------|---------|---------|
+| --------- | ------ | ------- | ------- | ------- | ------- | ------- |
 | 0         | 8      | 13      | 18      | 24      | 30      | 45      |
 | 1         | 32     | 48      | 60      | 72      | 88      | 118     |
 | 2         | 54     | 81      | 101     | 121     | 148     | 178     |
