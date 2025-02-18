@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="42 School Milestone Calculator - Estimate your progress through the curriculum based on your pace."
+    />
+	<link rel="icon" href="img/icon.png" type="image/png" />
+    <meta
+      name="keywords"
+      content="42 School, Milestone Calculator, Coding School, 42 Curriculum, Programming Progress"
+    />
+    <meta name="author" content="42 Student Community" />
+    <title>42 Milestone Calculator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #121212;
+        color: #e0e0e0;
+        text-align: center;
+        margin: 50px;
+      }
+      h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #f5c518;
+      }
+      .container {
+        background: #1e1e1e;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        display: inline-block;
+        text-align: left;
+      }
+      label {
+        display: block;
+        font-weight: 600;
+        margin: 10px 0 5px;
+      }
+      input,
+      select,
+      button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #444;
+        border-radius: 5px;
+        box-sizing: border-box;
+        background: #2a2a2a;
+        color: #e0e0e0;
+      }
+      input:focus,
+      select:focus {
+        outline: none;
+        border-color: #f5c518;
+      }
+      button {
+        background-color: #f5c518;
+        color: black;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      button:hover {
+        background-color: #d4a50c;
+      }
+      #result {
+        margin-top: 15px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #f5c518;
+      }
+      .warning {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #ff6b6b;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>42 Milestone Calculator</h2>
+    <div class="container">
+      <label>Start Date:</label>
+      <input type="date" id="startDate" />
+
+      <label>Pace:</label>
+      <select id="pace">
+        <option value="8">8</option>
+        <option value="12">12</option>
+        <option value="15">15</option>
+        <option value="18">18</option>
+        <option value="22">22</option>
+        <option value="24">24</option>
+      </select>
+
+      <label>Milestone:</label>
+      <select id="milestone">
+        <option value="0">Milestone 0</option>
+        <option value="1">Milestone 1</option>
+        <option value="2">Milestone 2</option>
+        <option value="3">Milestone 3</option>
+        <option value="4">Milestone 4</option>
+        <option value="5">Milestone 5</option>
+        <option value="6">Milestone 6</option>
+      </select>
+
+      <label>Bonus Days:</label>
+      <input type="number" id="bonusDays" value="0" />
+
+      <button onclick="calculateMilestone()">Calculate</button>
+
+      <p id="result"></p>
+    </div>
+
+    <p class="warning">
+      This tool is not an official 42 School resource. Dates are estimations and
+      may contain errors.
+    </p>
+
+    <script>
+      const paceDays = {
+        8: [8, 24, 22, 36, 51, 71, 32],
+        12: [13, 35, 33, 53, 77, 107, 47],
+        15: [18, 42, 41, 67, 96, 134, 59],
+        18: [24, 48, 49, 80, 115, 162, 70],
+        22: [30, 58, 60, 98, 141, 197, 86],
+        24: [45, 73, 60, 128, 141, 197, 86],
+      };
+
+      function calculateMilestone() {
+        let startDate = document.getElementById("startDate").value;
+        let pace = parseInt(document.getElementById("pace").value);
+        let milestone = parseInt(document.getElementById("milestone").value);
+        let bonusDays = parseInt(document.getElementById("bonusDays").value);
+
+        if (!startDate || isNaN(milestone)) {
+          document.getElementById("result").innerText =
+            "Please fill all fields correctly.";
+          return;
+        }
+
+        let daysToAdd = paceDays[pace]
+          .slice(0, milestone + 1)
+          .reduce((a, b) => a + b, 0);
+        if (milestone < 7) daysToAdd += bonusDays;
+
+        // Convertir la date de début en objet Date en utilisant UTC
+        let resultDate = new Date(startDate + "T00:00:00Z");
+        resultDate.setUTCDate(resultDate.getUTCDate() + daysToAdd);
+
+        let options = {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        };
+        let formattedDate = resultDate.toLocaleDateString("en-US", options);
+
+        document.getElementById("result").innerText =
+          "Milestone Date: " + formattedDate;
+      }
+    </script>
+  </body>
+</html>
