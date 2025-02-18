@@ -32,7 +32,7 @@ The **42 Milestone Calculator** is a web-based tool designed to help students at
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/42-milestone-calculator.git
+   git clone https://github.com/rom98759/PaceTracker42.git
    ```
 
 2. **Open the Project:**
