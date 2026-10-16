@@ -1,5 +1,10 @@
 # 42 Milestone Calculator
 
+![PaceTracker42 — aperçu](docs/screenshot.jpg)
+
+> _Capture de l'outil en ligne — [version live](https://rom98759.github.io/PaceTracker42/)._
+
+
 ## Inspiration
 
 This project was inspired by the amazing work done in the [deadlines42Public](https://github.com/LLuisPP/deadlines42Public.git) repository. I wanted to create a similar tool that would help students at 42 track their progress through the curriculum and plan their deadlines effectively online.
